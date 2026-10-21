@@ -1,0 +1,220 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unarine Phasha | Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <a href="#" class="logo">una<span>.</span></a>
+
+        <nav>
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+        </nav>
+
+        <button id="theme-toggle" type="button">Dark mode</button>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">SOFTWARE DEVELOPMENT STUDENT</p>
+
+                <h1>Hi, I'm Unarine<span>.</span></h1>
+
+                <p class="intro-text">
+                    I'm a final-year software development student
+                    interested in web development and building useful
+                    things with code. I'm looking for an opportunity
+                    to gain practical experience and keep learning.
+                </p>
+
+                <a class="button" href="#projects">View my projects</a>
+                <a class="text-link" href="assets/unarine-cv.pdf"
+                   target="_blank">View my CV</a>
+            </div>
+
+            <div class="photo-container">
+                <span class="floating-shape" aria-hidden="true"></span>
+                <span class="heart-badge" aria-label="Favorite">♥</span>
+                <img src="assets/unarine-photo.jpeg"
+                     alt="Photo of Unarine Phasha">
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About me</h2>
+
+            <p>
+                I'm currently completing my studies in software
+                development. I've been learning different technologies
+                through my coursework and personal projects, and I'm
+                working on improving my skills by putting what I learn
+                into practice.
+            </p>
+
+            <p>
+                Outside of coding, I enjoy reading, gaming, playing
+                guitar and exploring creative projects.
+            </p>
+
+            <a class="text-link" href="assets/unarine-cv.pdf" download>
+                Download my CV ↓
+            </a>
+        </section>
+
+        <section id="skills">
+            <h2>Skills</h2>
+
+            <p class="section-intro">
+                Some of the tools and technologies I've worked with.
+            </p>
+
+            <div class="skills-list">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+                <span>Python</span>
+                <span>SQL</span>
+                <span>Databases</span>
+                <span>Power BI</span>
+                <span>GitHub</span>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>My projects</h2>
+
+            <p class="section-intro">
+                A few projects that show what I've been learning.
+            </p>
+
+            <div class="projects-list">
+                <article class="project">
+                    <p class="project-number">01</p>
+                    <h3>Personal Portfolio</h3>
+
+                    <p>
+                        A website where I can share my work, skills
+                        and progress as a developer.
+                    </p>
+
+                    <p class="technologies">HTML · CSS · JavaScript</p>
+
+                    <a href="https://github.com/Unarine-Phasha"
+                       target="_blank" rel="noopener noreferrer">
+                        View on GitHub ↗
+                    </a>
+                </article>
+
+                <article class="project">
+                    <p class="project-number">02</p>
+                    <h3>Project Two</h3>
+
+                    <p>
+                        Add a short description of another project,
+                        what it does, and what you learned from it.
+                    </p>
+
+                    <p class="technologies">Add your technologies</p>
+
+                    <a href="https://github.com/Unarine-Phasha"
+                       target="_blank" rel="noopener noreferrer">
+                        View on GitHub ↗
+                    </a>
+                </article>
+
+                <article class="project">
+                    <p class="project-number">03</p>
+                    <h3>Project Three</h3>
+
+                    <p>
+                        Add another example project here when you have
+                        something to showcase from your coursework or work.
+                    </p>
+
+                    <p class="technologies">Add your technologies</p>
+
+                    <a href="https://github.com/Unarine-Phasha"
+                       target="_blank" rel="noopener noreferrer">
+                        View on GitHub ↗
+                    </a>
+                </article>
+            </div>
+        </section>
+
+        <section id="cv">
+            <h2>My CV</h2>
+
+            <p>
+                Interested in my background and skills?
+                You can view or download my CV below.
+            </p>
+
+            <a class="button" href="assets/unarine-cv.pdf" download>
+                Download CV ↓
+            </a>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <h2>Get in touch<span>.</span></h2>
+
+        <p>
+            I'm open to internship opportunities and getting
+            experience in the software development industry.
+        </p>
+
+        <div class="footer-links">
+            <a href="mailto:phashaunarine@gmail.com">Email</a>
+
+            <a href="https://github.com/Unarine-Phasha"
+               target="_blank" rel="noopener noreferrer">GitHub</a>
+
+            <a href="https://www.linkedin.com/in/unarine-phasha-410a59376/"
+               target="_blank" rel="noopener noreferrer">LinkedIn</a>
+
+            <a href="https://www.linkedin.com/in/unarine-phasha-410a59376/"
+               target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+            <h3>Contact me</h3>
+
+            <div class="form-row">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required>
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-row">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here..." required></textarea>
+            </div>
+
+            <button type="submit" class="button contact-button">Send message</button>
+        </form>
+
+        <p>
+            Feel free to reach out for collaborations, internships,
+            or opportunities in software development.
+        </p>
+
+        <p class="copyright">
+            © <span id="year"></span> Unarine Phasha
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
