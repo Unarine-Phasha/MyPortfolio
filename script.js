@@ -28,29 +28,6 @@ themeButton.addEventListener("click", function () {
     updateThemeButton();
 });
 
-const contactForm = document.getElementById("contact-form");
-
-if (contactForm) {
-    contactForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-
-        const name = document.getElementById("name").value.trim();
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        const subject = encodeURIComponent(
-            `Portfolio enquiry from ${name || "Website visitor"}`
-        );
-
-        const body = encodeURIComponent(
-            `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
-        );
-
-        window.location.href = `mailto:phashaunarine@gmail.com?subject=${subject}&body=${body}`;
-        contactForm.reset();
-    });
-}
-
 if (floatingShape) {
     const updateFloatingShape = () => {
         const scrollOffset = window.scrollY || window.pageYOffset;
@@ -70,7 +47,3 @@ if (floatingShape) {
 }
 
 updateThemeButton();
-
-// Display the current year
-document.getElementById("year").textContent =
-    new Date().getFullYear();
