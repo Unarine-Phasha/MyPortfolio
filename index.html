@@ -1,153 +1,234 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Unarine Phasha, a final-year software development student working with C#, .NET, Java and SQL.">
     <title>Unarine Phasha | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,500;9..144,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script>
+        try {
+            var t = localStorage.getItem("theme");
+            if (t === "dark" || (!t && matchMedia("(prefers-color-scheme: dark)").matches)) {
+                document.documentElement.classList.add("dark");
+            }
+        } catch (e) {}
+    </script>
 </head>
 
 <body>
-    <header>
-        <a href="#" class="logo">una<span>.</span></a>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="progress" aria-hidden="true"></div>
 
-        <nav>
+    <header>
+        <a href="#top" class="logo">una<span>.</span></a>
+
+        <nav aria-label="Main">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#cv">CV</a>
         </nav>
 
-        <button id="theme-toggle" type="button">Dark mode</button>
+        <button id="theme-toggle" type="button" aria-pressed="false">Dark mode</button>
     </header>
 
-    <main>
-        <section class="hero">
+    <main id="main">
+        <section class="hero" id="top">
             <div class="hero-content">
-                <p class="eyebrow">SOFTWARE DEVELOPMENT STUDENT</p>
+                <p class="status"><span aria-hidden="true"></span>Final-year software development student</p>
 
-                <h1>Hi, I'm Unarine<span>.</span></h1>
+                <h1>
+                    Hi, I'm
+                    <span class="scribble">Unarine<svg viewBox="0 0 200 14" preserveAspectRatio="none" aria-hidden="true"><path d="M2 8 Q 14 0 26 8 T 50 8 T 74 8 T 98 8 T 122 8 T 146 8 T 170 8 T 198 8"/></svg></span>.
+                </h1>
 
                 <p class="intro-text">
-                    I'm a final-year software development student
-                    interested in web development and building useful
-                    things with code. I'm looking for an opportunity
-                    to gain practical experience and keep learning.
+                    I work with C#, .NET, Java and SQL, and I'm looking for an
+                    opportunity to gain practical experience and keep learning.
                 </p>
 
-                <a class="button" href="#projects">View my projects</a>
-                <a class="text-link" href="assets/unarine-cv.pdf"
-                   target="_blank">View my CV</a>
+                <div class="actions">
+                    <a class="button" href="#projects">View my projects</a>
+                    <a class="text-link" href="assets/unarine-cv.pdf" target="_blank" rel="noopener">View my CV</a>
+                </div>
             </div>
 
-            <div class="photo-container">
-                <span class="floating-shape" aria-hidden="true"></span>
-                <span class="heart-badge" aria-label="Favorite">♥</span>
-                <img src="assets/unarine-photo.jpeg"
-                     alt="Photo of Unarine Phasha">
+            <div class="photo-wrap">
+                <img src="assets/unarine-photo.jpeg" alt="Photo of Unarine Phasha">
+
+                <button class="heart-badge" id="heart" type="button" aria-label="Send a heart">
+                    <span aria-hidden="true">♥</span><b id="heart-count"></b>
+                </button>
+
+                <div class="code-card">
+<pre><code><span class="c">-- about_me.sql</span>
+<span class="k">SELECT</span> name, role, skills
+<span class="k">FROM</span> unarine;</code></pre>
+                    <pre class="query-output" id="query-output" hidden><code>name   | Unarine Phasha
+role   | Software dev student
+skills | C#, .NET, Java, SQL</code></pre>
+                    <button type="button" id="run-query" aria-expanded="false" aria-controls="query-output">▶ Run query</button>
+                </div>
             </div>
         </section>
 
         <section id="about">
-            <h2>About me</h2>
+            <div class="about-grid">
+                <h2>About me</h2>
 
-            <p>
-                I'm currently completing my studies in software
-                development. I've been learning different technologies
-                through my coursework and personal projects, and I'm
-                working on improving my skills by putting what I learn
-                into practice.
-            </p>
-
-            <p>
-                Outside of coding, I enjoy reading, gaming, playing
-                guitar and exploring creative projects.
-            </p>
-
-            <a class="text-link" href="assets/unarine-cv.pdf" download>
-                Download my CV ↓
-            </a>
+                <div class="about-text">
+                    <p>
+                        I'm completing my studies in software development, with a
+                        strong focus on back-end work: building applications in C#
+                        and .NET or Java, and designing and querying the databases
+                        behind them.
+                    </p>
+                    <p>
+                        I love learning, and I learn fast. I make mistakes like
+                        everyone, but I always learn from them. The errors I've run
+                        into while coding have made me a better programmer today.
+                    </p>
+                    <p>
+                        In 2026 I led the South African Sign Language (SASL) club,
+                        where I taught other students to sign. I learned SASL myself
+                        in about three months. I'm bubbly and welcoming, I communicate
+                        easily with people, and I'm comfortable leading.
+                    </p>
+                    <p>Outside of coding, I enjoy:</p>
+                    <ul class="chips">
+                        <li>Reading</li>
+                        <li>Gaming</li>
+                        <li>Playing guitar</li>
+                        <li>Creative projects</li>
+                    </ul>
+                </div>
+            </div>
         </section>
 
         <section id="skills">
             <h2>Skills</h2>
+            <p class="section-intro">Tools and technologies I've worked with.</p>
 
-            <p class="section-intro">
-                Some of the tools and technologies I've worked with.
-            </p>
+            <div class="filters" role="group" aria-label="Filter skills">
+                <button type="button" data-filter="all" aria-pressed="true">All</button>
+                <button type="button" data-filter="languages" aria-pressed="false">Languages</button>
+                <button type="button" data-filter="tools" aria-pressed="false">Frameworks and tools</button>
+                <button type="button" data-filter="sql" aria-pressed="false">Databases and SQL</button>
+                <button type="button" data-filter="practices" aria-pressed="false">Practices</button>
+                <button type="button" data-filter="beyond" aria-pressed="false">Beyond code</button>
+            </div>
 
-            <div class="skills-list">
-                <span>HTML</span>
-                <span>CSS</span>
-                <span>JavaScript</span>
-                <span>Python</span>
-                <span>SQL</span>
-                <span>Databases</span>
-                <span>Power BI</span>
-                <span>GitHub</span>
+            <div class="skills-groups">
+                <div class="skills-group" data-group="languages">
+                    <h3>Languages</h3>
+                    <ul class="chips">
+                        <li>C#</li>
+                        <li>Java</li>
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                </div>
+
+                <div class="skills-group" data-group="tools">
+                    <h3>Frameworks and tools</h3>
+                    <ul class="chips">
+                        <li>.NET</li>
+                        <li>ASP.NET</li>
+                        <li>Entity Framework</li>
+                        <li>Docker</li>
+                        <li>Git</li>
+                        <li>GitHub</li>
+                        <li>Visual Studio</li>
+                        <li>VS Code</li>
+                        <li>IntelliJ</li>
+                        <li>Power BI</li>
+                    </ul>
+                </div>
+
+                <div class="skills-group featured" data-group="sql">
+                    <h3>Databases and SQL</h3>
+                    <ul class="chips">
+                        <li>SQL</li>
+                        <li>SQL Server</li>
+                        <li>MySQL</li>
+                        <li>PostgreSQL</li>
+                        <li>SQLite</li>
+                        <li>NoSQL</li>
+                        <li>Database design</li>
+                        <li>Queries and joins</li>
+                        <li>Stored procedures</li>
+                        <li>Views and indexes</li>
+                        <li>Data analysis</li>
+                    </ul>
+                </div>
+
+                <div class="skills-group" data-group="practices">
+                    <h3>Practices</h3>
+                    <ul class="chips">
+                        <li>Object-oriented programming</li>
+                        <li>Unit testing</li>
+                        <li>Agile</li>
+                        <li>Data structures and algorithms</li>
+                    </ul>
+                </div>
+
+                <div class="skills-group" data-group="beyond">
+                    <h3>Beyond code</h3>
+                    <ul class="chips">
+                        <li>South African Sign Language</li>
+                        <li>Leadership</li>
+                        <li>Teaching</li>
+                        <li>Communication</li>
+                        <li>Quick learner</li>
+                        <li>Computer architecture</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="projects">
             <h2>My projects</h2>
-
-            <p class="section-intro">
-                A few projects that show what I've been learning.
-            </p>
+            <p class="section-intro">A few projects that show what I've been learning.</p>
 
             <div class="projects-list">
                 <article class="project">
-                    <p class="project-number">01</p>
-                    <h3>Personal Portfolio</h3>
-
-                    <p>
-                        A website where I can share my work, skills
-                        and progress as a developer.
-                    </p>
-
-                    <p class="technologies">HTML · CSS · JavaScript</p>
-
-                    <a href="https://github.com/Unarine-Phasha"
-                       target="_blank" rel="noopener noreferrer">
-                        View on GitHub ↗
-                    </a>
+                    <div>
+                        <h3>Personal Portfolio</h3>
+                        <p>A website where I share my work, skills and progress as a developer.</p>
+                        <p class="technologies">HTML, CSS, JavaScript</p>
+                    </div>
+                    <a class="pill" href="https://github.com/Unarine-Phasha" target="_blank" rel="noopener noreferrer">View on GitHub <span aria-hidden="true">↗</span></a>
                 </article>
 
                 <article class="project">
-                    <p class="project-number">02</p>
-                    <h3>Student Life Dashboard</h3>
-
-                    <p>
-                        A student productivity dashboard for tracking
-                        assignments and calculating the marks needed
-                        to reach a target grade.
-                    </p>
-
-                    <p class="technologies">
-                        Assignment tracker · Grade calculator
-                    </p>
-
-                    <a href="https://unarine-phasha.github.io/StudentLifeDashboard/"
-                       target="_blank" rel="noopener noreferrer">
-                        Open live project ↗
-                    </a>
+                    <div>
+                        <h3>Student Life Dashboard</h3>
+                        <p>A dashboard for tracking assignments and calculating the marks needed to reach a target grade.</p>
+                        <p class="technologies">Assignment tracker, grade calculator</p>
+                    </div>
+                    <a class="pill" href="https://unarine-phasha.github.io/StudentLifeDashboard/" target="_blank" rel="noopener noreferrer">Open live project <span aria-hidden="true">↗</span></a>
                 </article>
             </div>
         </section>
 
         <section id="cv">
-            <h2>My CV</h2>
-
-            <p>
-                Interested in my background and skills?
-                You can view or download my CV below.
-            </p>
-
-            <a class="button" href="assets/unarine-cv.pdf" download>
-                Download CV ↓
-            </a>
+            <div class="cv-box">
+                <h2>My CV</h2>
+                <p>View or download my CV for details on my background, studies and skills.</p>
+                <a class="button light" href="assets/unarine-cv.pdf" download>Download CV ↓</a>
+            </div>
         </section>
     </main>
+
+    <footer>
+        <p>© <span id="year">2026</span> Unarine Phasha</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
